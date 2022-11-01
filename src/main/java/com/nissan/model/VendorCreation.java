@@ -7,7 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -17,18 +17,25 @@ public class VendorCreation {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int vdId;
+	
 	private String vdName;
 	private String vdType;
-	private  int vdATypeId ;
+	private int atId ;
 	private LocalDate vdFrom;
 	private LocalDate vdTo;
 	private String vdAddr;
+	private int phoneNumber;
+	private LocalDate vdCreationDate;
+	private boolean isActive;
 	
 	
 	
-	@JoinColumn(name="vdATypeId" ,insertable= false,  updatable = false)
-	@OneToMany
-	private  AssetDefinition assetdefinition ;
+
+	@JoinColumn(name="atId" ,insertable= false,  updatable = false)
+	@ManyToOne
+	
+	private  AssetType assettype ;
+
 
 
 
@@ -41,22 +48,25 @@ public class VendorCreation {
 
 
 	//Parameterized Constructor
-	public VendorCreation(int vdId, String vdName, String vdType, int vdATypeId, LocalDate vdFrom, LocalDate vdTo,
-			String vdAddr, AssetDefinition assetdefinition) {
+	public VendorCreation(int vdId, String vdName, String vdType, int atId, LocalDate vdFrom, LocalDate vdTo,
+			String vdAddr, int phoneNumber, LocalDate vdCreationDate, boolean isActive, AssetType assettype) {
 		super();
 		this.vdId = vdId;
 		this.vdName = vdName;
 		this.vdType = vdType;
-		this.vdATypeId = vdATypeId;
+		this.atId = atId;
 		this.vdFrom = vdFrom;
 		this.vdTo = vdTo;
 		this.vdAddr = vdAddr;
-		this.assetdefinition = assetdefinition;
+		this.phoneNumber = phoneNumber;
+		this.vdCreationDate = vdCreationDate;
+		this.isActive = isActive;
+		this.assettype = assettype;
 	}
 
 
-
 	//Getters and Setters
+
 	public int getVdId() {
 		return vdId;
 	}
@@ -93,14 +103,14 @@ public class VendorCreation {
 
 
 
-	public int getVdATypeId() {
-		return vdATypeId;
+	public int getAtId() {
+		return atId;
 	}
 
 
 
-	public void setVdATypeId(int vdATypeId) {
-		this.vdATypeId = vdATypeId;
+	public void setAtId(int atId) {
+		this.atId = atId;
 	}
 
 
@@ -141,22 +151,54 @@ public class VendorCreation {
 
 
 
-	public AssetDefinition getAssetdefinition() {
-		return assetdefinition;
+	public int getPhoneNumber() {
+		return phoneNumber;
 	}
 
 
 
-	public void setAssetdefinition(AssetDefinition assetdefinition) {
-		this.assetdefinition = assetdefinition;
+	public void setPhoneNumber(int phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 
 
-	
-	
 
-	
-	
+	public LocalDate getVdCreationDate() {
+		return vdCreationDate;
+	}
+
+
+
+	public void setVdCreationDate(LocalDate vdCreationDate) {
+		this.vdCreationDate = vdCreationDate;
+	}
+
+
+
+	public boolean isActive() {
+		return isActive;
+	}
+
+
+
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
+	}
+
+
+
+	public AssetType getAssettype() {
+		return assettype;
+	}
+
+
+
+	public void setAssettype(AssetType assettype) {
+		this.assettype = assettype;
+	}
+
+
+
 	
 	
 
