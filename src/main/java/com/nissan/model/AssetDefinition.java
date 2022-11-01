@@ -97,7 +97,5 @@ public class AssetDefinition {
 	}
 	
 	
-=======
-public class AssetDefinition {
 
 }
