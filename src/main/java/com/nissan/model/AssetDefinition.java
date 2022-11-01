@@ -104,5 +104,7 @@ public class AssetDefinition {
 		this.adClass = adClass;
 	}
 	
+
+
 }
 
