@@ -95,6 +95,12 @@ public class AssetDefinition {
 	public void setAdClass(String adClass) {
 		this.adClass = adClass;
 	}
+
+
+	public Object findAssetById() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }
 
