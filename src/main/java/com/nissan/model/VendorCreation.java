@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -17,17 +18,19 @@ public class VendorCreation {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int vdId;
+	
 	private String vdName;
 	private String vdType;
-	private  int vdATypeId ;
+	private  int atId ;
 	private LocalDate vdFrom;
 	private LocalDate vdTo;
 	private String vdAddr;
+	private int phoneNumber;
 	
 	
 	
 	@JoinColumn(name="atId" ,insertable= false,  updatable = false)
-	@OneToMany
+	@ManyToOne
 	
 	private  AssetDefinition assetdefinition ;
 
@@ -42,16 +45,17 @@ public class VendorCreation {
 
 
 	//Parameterized Constructor
-	public VendorCreation(int vdId, String vdName, String vdType, int vdATypeId, LocalDate vdFrom, LocalDate vdTo,
-			String vdAddr, AssetDefinition assetdefinition) {
+	public VendorCreation(int vdId, String vdName, String vdType, int atId, LocalDate vdFrom, LocalDate vdTo,
+			String vdAddr, int phoneNumber, AssetDefinition assetdefinition) {
 		super();
 		this.vdId = vdId;
 		this.vdName = vdName;
 		this.vdType = vdType;
-		this.vdATypeId = vdATypeId;
+		this.atId = atId;
 		this.vdFrom = vdFrom;
 		this.vdTo = vdTo;
 		this.vdAddr = vdAddr;
+		this.phoneNumber = phoneNumber;
 		this.assetdefinition = assetdefinition;
 	}
 
@@ -94,14 +98,14 @@ public class VendorCreation {
 
 
 
-	public int getVdATypeId() {
-		return vdATypeId;
+	public int getatId() {
+		return atId;
 	}
 
 
 
-	public void setVdATypeId(int vdATypeId) {
-		this.vdATypeId = vdATypeId;
+	public void setatId(int atId) {
+		this.atId = atId;
 	}
 
 
@@ -153,11 +157,18 @@ public class VendorCreation {
 	}
 
 
-	
-	
 
-	
-	
+	public int getPhoneNumber() {
+		return phoneNumber;
+	}
+
+
+
+	public void setPhoneNumber(int phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+
 	
 	
 
