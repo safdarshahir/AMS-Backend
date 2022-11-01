@@ -52,6 +52,8 @@ public class AssetCreation {
 	private Date amFrom;
 	
 	private Date amTo;
+	
+	private boolean isActive;
 
 	public  AssetCreation() {
 		// TODO Auto-generated constructor stub
@@ -59,7 +61,7 @@ public class AssetCreation {
 
 	public AssetCreation(int amId, int atId, AssetType assetType, int vdId, VendorCreation vendorCreation, int adId,
 			AssetDefinition assetDefinition, String amModel, String amSnumber, String amMyyear, Date amPdate,
-			String amWarranty, Date amFrom, Date amTo) {
+			String amWarranty, Date amFrom, Date amTo,boolean isActive) {
 		super();
 		this.amId = amId;
 		this.atId = atId;
@@ -75,6 +77,16 @@ public class AssetCreation {
 		this.amWarranty = amWarranty;
 		this.amFrom = amFrom;
 		this.amTo = amTo;
+		this.isActive=isActive;
+	}
+
+	
+	public boolean isActive() {
+		return isActive;
+	}
+
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
 	}
 
 	public int getAmId() {
