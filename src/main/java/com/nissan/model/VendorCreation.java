@@ -1,100 +1,175 @@
 package com.nissan.model;
 
+import java.time.LocalDate;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="tblAssetDefinition")
-public class AssetDefinition {
-
+@Table(name = "tblVendor")
+public class VendorCreation {
+	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int adId;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int vdId;
 	
-	@Column(nullable=false,unique=true)
-	private String adName;
+	private String vdName;
+	private String vdType;
+	private  int atId ;
+	private LocalDate vdFrom;
+	private LocalDate vdTo;
+	private String vdAddr;
+	private int phoneNumber;
 	
-	private int atId;
-	
-	@JoinColumn(name="atId",insertable=false,updatable=false)      //User.roleId=Role.roleId
-	@ManyToOne  
-	private AssetType assetType;
 	
 	
-	private String adClass;
+	@JoinColumn(name="atId" ,insertable= false,  updatable = false)
+	@ManyToOne
+	
+	private  AssetDefinition assetdefinition ;
 
 
-	public AssetDefinition() {
+
+	//default constructor
+	public VendorCreation() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
 
-	public AssetDefinition(int adId, String adName, int atId, AssetType assetType, String adClass) {
+
+	//Parameterized Constructor
+	public VendorCreation(int vdId, String vdName, String vdType, int atId, LocalDate vdFrom, LocalDate vdTo,
+			String vdAddr, int phoneNumber, AssetDefinition assetdefinition) {
 		super();
-		this.adId = adId;
-		this.adName = adName;
+		this.vdId = vdId;
+		this.vdName = vdName;
+		this.vdType = vdType;
 		this.atId = atId;
-		this.assetType = assetType;
-		this.adClass = adClass;
+		this.vdFrom = vdFrom;
+		this.vdTo = vdTo;
+		this.vdAddr = vdAddr;
+		this.phoneNumber = phoneNumber;
+		this.assetdefinition = assetdefinition;
 	}
 
 
-	public int getAdId() {
-		return adId;
+
+	//Getters and Setters
+	public int getVdId() {
+		return vdId;
 	}
 
 
-	public void setAdId(int adId) {
-		this.adId = adId;
+
+	public void setVdId(int vdId) {
+		this.vdId = vdId;
 	}
 
 
-	public String getAdName() {
-		return adName;
+
+	public String getVdName() {
+		return vdName;
 	}
 
 
-	public void setAdName(String adName) {
-		this.adName = adName;
+
+	public void setVdName(String vdName) {
+		this.vdName = vdName;
 	}
 
 
-	public int getAtId() {
+
+	public String getVdType() {
+		return vdType;
+	}
+
+
+
+	public void setVdType(String vdType) {
+		this.vdType = vdType;
+	}
+
+
+
+	public int getatId() {
 		return atId;
 	}
 
 
-	public void setAtId(int atId) {
+
+	public void setatId(int atId) {
 		this.atId = atId;
 	}
 
 
-	public AssetType getAssetType() {
-		return assetType;
+
+	public LocalDate getVdFrom() {
+		return vdFrom;
 	}
 
 
-	public void setAssetType(AssetType assetType) {
-		this.assetType = assetType;
+
+	public void setVdFrom(LocalDate vdFrom) {
+		this.vdFrom = vdFrom;
 	}
 
 
-	public String getAdClass() {
-		return adClass;
+
+	public LocalDate getVdTo() {
+		return vdTo;
 	}
 
 
-	public void setAdClass(String adClass) {
-		this.adClass = adClass;
+
+	public void setVdTo(LocalDate vdTo) {
+		this.vdTo = vdTo;
 	}
+
+
+
+	public String getVdAddr() {
+		return vdAddr;
+	}
+
+
+
+	public void setVdAddr(String vdAddr) {
+		this.vdAddr = vdAddr;
+	}
+
+
+
+	public AssetDefinition getAssetdefinition() {
+		return assetdefinition;
+	}
+
+
+
+	public void setAssetdefinition(AssetDefinition assetdefinition) {
+		this.assetdefinition = assetdefinition;
+	}
+
+
+
+	public int getPhoneNumber() {
+		return phoneNumber;
+	}
+
+
+
+	public void setPhoneNumber(int phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+
 	
-}
+	
 
+}
