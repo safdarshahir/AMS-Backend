@@ -98,5 +98,10 @@ public class AssetDefinition {
 		this.adClass = adClass;
 	}
 	
+<<<<<<< HEAD
 	
 }
+=======
+}
+
+>>>>>>> d59bb2b51d520cb8b0b0f8c2552bdca6552bc02d
