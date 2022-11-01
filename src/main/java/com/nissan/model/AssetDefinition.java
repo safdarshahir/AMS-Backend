@@ -1,5 +1,6 @@
 package com.nissan.model;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -96,4 +97,7 @@ public class AssetDefinition {
 	}
 	
 	
+=======
+public class AssetDefinition {
+
 }
