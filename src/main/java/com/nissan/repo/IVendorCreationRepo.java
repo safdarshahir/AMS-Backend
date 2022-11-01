@@ -8,12 +8,12 @@ import org.springframework.stereotype.Repository;
 import com.nissan.model.VendorCreation;
 
 @Repository
-public interface IVendorCreation extends JpaRepositoryImplementation<VendorCreation, Integer> {
+public interface IVendorCreationRepo extends JpaRepositoryImplementation<VendorCreation, Integer> {
 	
 	//custom methods
 	
 	//Custom Retrieve phoneNumber
     @Query("from VendorCreation where phoneNumber=?1 and isActive=true")
-    public VendorCreation findByPhoneNumber(int phoneNumber);
+    public VendorCreation searchByPhone(int phoneNumber);
 
 }
