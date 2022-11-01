@@ -53,12 +53,11 @@ public class AssetCreation {
 	
 	private Date amTo;
 
-	public AssetMaster() {
-		super();
+	public  AssetCreation() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public AssetMaster(int amId, int atId, AssetType assetType, int vdId, VendorCreation vendorCreation, int adId,
+	public AssetCreation(int amId, int atId, AssetType assetType, int vdId, VendorCreation vendorCreation, int adId,
 			AssetDefinition assetDefinition, String amModel, String amSnumber, String amMyyear, Date amPdate,
 			String amWarranty, Date amFrom, Date amTo) {
 		super();
