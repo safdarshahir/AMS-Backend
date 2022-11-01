@@ -21,50 +21,61 @@ public class PurchaseOrderCreation {
 	private int pdId;
 	
 	@Column(unique = true,nullable = false)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private String pdOrderNo;
 	
 	
-	private long adId;
+	private int adId;
 	@JoinColumn(name = "adId",insertable = false,updatable = false)
 	@ManyToOne
 	private AssetDefinition assetDefinition;
 	
+	
+	private int atId;
 	@OneToOne
 	@JoinColumn(name = "atId",insertable = false,updatable = false)
-	private int atId;
-
+	private AssetType assetType;
 	
 	private int pdQty;
 	
+	private int vdId;
 	@ManyToOne
 	@JoinColumn(name = "vdId",insertable=false,updatable = false)
-	private int vdId;
+	private VendorCreation vendorCreation;
+	
 	
 	private LocalDate pdDate;
 	private LocalDate pdDdate;
 	
 	private String pdStatus;
+	
+	private LocalDate pdCreatedDate;
 
 	public PurchaseOrderCreation() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public PurchaseOrderCreation(int pdId, String pdOrderNo, long adId, AssetDefinition assetDefinition, int atId,
-			int pdQty, int vdId, LocalDate pdDate, LocalDate pdDdate, String pdStatus) {
+
+	public PurchaseOrderCreation(int pdId, String pdOrderNo, int adId, AssetDefinition assetDefinition, int atId,
+			AssetType assetType, int pdQty, int vdId, VendorCreation vendorCreation, LocalDate pdDate,
+			LocalDate pdDdate, String pdStatus,LocalDate pdCreatedDate) {
 		super();
 		this.pdId = pdId;
 		this.pdOrderNo = pdOrderNo;
 		this.adId = adId;
 		this.assetDefinition = assetDefinition;
 		this.atId = atId;
+		this.assetType = assetType;
 		this.pdQty = pdQty;
 		this.vdId = vdId;
+		this.vendorCreation = vendorCreation;
 		this.pdDate = pdDate;
 		this.pdDdate = pdDdate;
 		this.pdStatus = pdStatus;
+		this.pdCreatedDate = pdCreatedDate;
 	}
+
 
 	public int getPdId() {
 		return pdId;
@@ -82,11 +93,11 @@ public class PurchaseOrderCreation {
 		this.pdOrderNo = pdOrderNo;
 	}
 
-	public long getAdId() {
+	public int getAdId() {
 		return adId;
 	}
 
-	public void setAdId(long adId) {
+	public void setAdId(int adId) {
 		this.adId = adId;
 	}
 
@@ -145,5 +156,36 @@ public class PurchaseOrderCreation {
 	public void setPdStatus(String pdStatus) {
 		this.pdStatus = pdStatus;
 	}
+
+
+	public AssetType getAssetType() {
+		return assetType;
+	}
+
+
+	public void setAssetType(AssetType assetType) {
+		this.assetType = assetType;
+	}
+
+
+	public VendorCreation getVendorCreation() {
+		return vendorCreation;
+	}
+
+
+	public void setVendorCreation(VendorCreation vendorCreation) {
+		this.vendorCreation = vendorCreation;
+	}
+
+
+	public LocalDate getPdCreatedDate() {
+		return pdCreatedDate;
+	}
+
+
+	public void setPdCreatedDate(LocalDate pdCreatedDate) {
+		this.pdCreatedDate = pdCreatedDate;
+	}
+	
 
 }

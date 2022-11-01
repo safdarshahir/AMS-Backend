@@ -8,7 +8,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -30,11 +29,7 @@ public class VendorCreation {
 	
 	
 	@JoinColumn(name="atId" ,insertable= false,  updatable = false)
-<<<<<<< HEAD
-	@OneToMany
-=======
 	@ManyToOne
->>>>>>> e4bd2938a047a4f23c2afebae043479bb03a350a
 	
 	private  AssetDefinition assetdefinition ;
 
