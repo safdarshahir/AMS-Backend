@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="tblUserRegistration")
-public class UserRegistration {
+public class User {
 	
 	//fields
 	@Id
@@ -34,12 +34,12 @@ public class UserRegistration {
 	@ManyToOne
 	private UserType userType;
 
-	public UserRegistration() {
+	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public UserRegistration(int uId, String userName, String password, String firstName, String lastName, int age,
+	public User(int uId, String userName, String password, String firstName, String lastName, int age,
 			String gender, String address, int phoneNumber, UserType userType) {
 		super();
 		this.uId = uId;
@@ -136,7 +136,7 @@ public class UserRegistration {
 
 	@Override
 	public String toString() {
-		return "UserRegistration [uId=" + uId + ", userName=" + userName + ", password=" + password + ", firstName="
+		return "User [uId=" + uId + ", userName=" + userName + ", password=" + password + ", firstName="
 				+ firstName + ", lastName=" + lastName + ", age=" + age + ", gender=" + gender + ", address=" + address
 				+ ", PhoneNumber=" + PhoneNumber + ", userType=" + userType + "]";
 	}

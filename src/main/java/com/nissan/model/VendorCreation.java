@@ -30,10 +30,12 @@ public class VendorCreation {
 	
 	
 	
+
 	@JoinColumn(name="atId" ,insertable= false,  updatable = false)
 	@ManyToOne
 	
 	private  AssetType assettype ;
+
 
 
 

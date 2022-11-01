@@ -24,18 +24,18 @@ public class UserType {
 	
 	@JsonIgnore
     @OneToMany(mappedBy="userType",cascade=CascadeType.ALL) // one role many users, cascade - when parent is deleted, child is also deleted
-    private List<UserRegistration> userRegistration;
+    private List<User> user;
 
 	public UserType() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public UserType(int userTypeNo, String userTypeName, List<UserRegistration> userRegistration) {
+	public UserType(int userTypeNo, String userTypeName, List<User> user) {
 		super();
 		this.userTypeNo = userTypeNo;
 		this.userTypeName = userTypeName;
-		this.userRegistration = userRegistration;
+		this.user = user;
 	}
 
 	public int getUserTypeNo() {
@@ -54,23 +54,19 @@ public class UserType {
 		this.userTypeName = userTypeName;
 	}
 
-	public List<UserRegistration> getUserRegistration() {
-		return userRegistration;
+	public List<User> getUser() {
+		return user;
 	}
 
-	public void setUserRegistration(List<UserRegistration> userRegistration) {
-		this.userRegistration = userRegistration;
+	public void setUser(List<User> user) {
+		this.user = user;
 	}
 
 	@Override
 	public String toString() {
-		return "UserType [userTypeNo=" + userTypeNo + ", userTypeName=" + userTypeName + ", userRegistration="
-				+ userRegistration + "]";
+		return "UserType [userTypeNo=" + userTypeNo + ", userTypeName=" + userTypeName + ", user=" + user + "]";
 	}
-	
-	
-	
-	
+
 	
 
 }
