@@ -3,30 +3,32 @@ package com.nissan.service;
 import java.util.List;
 
 import com.nissan.model.AssetDefinition;
-import com.nissan.repo.IVendorCreation;
+import com.nissan.model.AssetType;
+import com.nissan.model.VendorCreation;
+import com.nissan.repo.IVendorCreationRepo;
 
 
 
 public interface IVendorCreationService {
 	
 	//get all vendors
-		List<IVendorCreation> getAllVendors();
+		List<VendorCreation> getAllVendors();
 		
 		//add a vendor
-		IVendorCreation addVendor(IVendorCreation ivendorcreation);
+		VendorCreation addVendor(VendorCreation ivendorcreation);
 		
 		//edit a vendor
-		IVendorCreation updateVendor(IVendorCreation ivendorcreation);
+		VendorCreation updateVendor(VendorCreation ivendorcreation);
 		
 		//delete a vendor
-		IVendorCreation deleteVendor(IVendorCreation ivendorcreation);
+		void deleteVendor(int id);
 		
 		
 		//search by phone
-		IVendorCreation searchByPhone(int phoneNumber);
+		VendorCreation searchByPhone(int phoneNumber);
 		
 		//Show Asset
-		List<AssetDefinition> getAllAssets();
+		List<AssetType> getAllAssets();
 		
 		
 
