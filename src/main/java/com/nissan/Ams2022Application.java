@@ -9,6 +9,7 @@ public class Ams2022Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Ams2022Application.class, args);
 		System.out.println("AMS-Backend is running Successfuly  :) ");
+
 	}
 
 }
