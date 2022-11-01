@@ -26,7 +26,7 @@ public class VendorCreation {
 	
 	
 	
-	@JoinColumn(name="vdATypeId" ,insertable= false,  updatable = false)
+	@JoinColumn(name="atId" ,insertable= false,  updatable = false)
 	@OneToMany
 	
 	private  AssetDefinition assetdefinition ;
