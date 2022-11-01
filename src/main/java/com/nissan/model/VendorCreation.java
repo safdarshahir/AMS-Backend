@@ -19,16 +19,15 @@ public class VendorCreation {
 	private int vdId;
 	private String vdName;
 	private String vdType;
-	private  int vdATypeId ;
+	private  int atId ;
 	private LocalDate vdFrom;
 	private LocalDate vdTo;
 	private String vdAddr;
 	
 	
 	
-	@JoinColumn(name="vdATypeId" ,insertable= false,  updatable = false)
+	@JoinColumn(name="atId" ,insertable= false,  updatable = false)
 	@OneToMany
-	
 	private  AssetDefinition assetdefinition ;
 
 
@@ -48,7 +47,7 @@ public class VendorCreation {
 		this.vdId = vdId;
 		this.vdName = vdName;
 		this.vdType = vdType;
-		this.vdATypeId = vdATypeId;
+		this.atId = vdATypeId;
 		this.vdFrom = vdFrom;
 		this.vdTo = vdTo;
 		this.vdAddr = vdAddr;
@@ -95,13 +94,13 @@ public class VendorCreation {
 
 
 	public int getVdATypeId() {
-		return vdATypeId;
+		return atId;
 	}
 
 
 
 	public void setVdATypeId(int vdATypeId) {
-		this.vdATypeId = vdATypeId;
+		this.atId = vdATypeId;
 	}
 
 

@@ -27,6 +27,8 @@ public class AssetDefinition {
 	@ManyToOne  
 	private AssetType assetType;
 	
+	@ManyToOne
+	private VendorCreation vendor;
 	
 	private String adClass;
 
@@ -97,7 +99,4 @@ public class AssetDefinition {
 	}
 	
 	
-=======
-public class AssetDefinition {
-
 }
